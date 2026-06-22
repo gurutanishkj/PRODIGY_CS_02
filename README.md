@@ -1,171 +1,95 @@
 # PRODIGY_CS_02
-# Pixel Manipulation for Image Encryption
 
-## Prodigy InfoTech Cyber Security Internship – Task 02
+Pixel Manipulation for Image Encryption - Prodigy InfoTech Cyber Security Internship Task 02
 
-### Description
+## Description
 
-This project is a simple Image Encryption and Decryption Tool developed using Python. The application uses pixel manipulation techniques to encrypt and decrypt images by modifying RGB pixel values using a user-defined key.
-
-A graphical user interface (GUI) built with Tkinter allows users to select images, enter an encryption key, and perform encryption or decryption operations easily.
-
----
+A Python-based Image Encryption and Decryption Tool that uses pixel manipulation techniques to secure images. The application provides a graphical user interface (GUI) built using Tkinter and allows users to encrypt and decrypt images using a numeric key.
 
 ## Features
 
-- Browse and select image files.
-- Encrypt images using a numeric key.
-- Decrypt encrypted images using the same key.
-- Preview selected and processed images.
-- User-friendly graphical interface.
-- Supports PNG, JPG, JPEG, and BMP image formats.
-
----
-
-## Technologies Used
-
-- Python 3
-- Tkinter
-- Pillow (PIL)
-
----
+* Encrypts images using a user-defined key.
+* Decrypts encrypted images using the same key.
+* Supports PNG, JPG, JPEG, and BMP image formats.
+* Displays image previews within the application.
+* User-friendly graphical interface.
+* Preserves image dimensions during processing.
 
 ## How It Works
 
-### Encryption
+* The user selects an image using the **Browse Image** button.
+* A numeric key is entered for encryption or decryption.
+* During encryption, the key value is added to each RGB pixel component.
+* During decryption, the same key value is subtracted from each RGB pixel component.
+* The processed image can be saved and previewed within the application.
 
-For every pixel in the image:
+## Code Explanation
 
-```python
-(r + key) % 256
-(g + key) % 256
-(b + key) % 256
-```
+* `Image.open()` loads the selected image.
+* `convert("RGB")` converts the image into RGB format.
+* `pixels[x, y]` accesses individual pixel values.
+* `(value + key) % 256` encrypts pixel values.
+* `(value - key) % 256` decrypts pixel values.
+* `ImageTk.PhotoImage()` displays image previews in the GUI.
 
-The key value is added to each RGB component.
+## Technologies Used
 
-### Decryption
-
-For every pixel in the image:
-
-```python
-(r - key) % 256
-(g - key) % 256
-(b - key) % 256
-```
-
-The same key is subtracted to restore the original image.
-
-### Example
-
-Original Pixel:
-
-```text
-(100, 150, 200)
-```
-
-Key:
-
-```text
-26
-```
-
-Encrypted Pixel:
-
-```text
-(126, 176, 226)
-```
-
-Decrypted Pixel:
-
-```text
-(100, 150, 200)
-```
-
----
+* Python 3
+* Tkinter
+* Pillow (PIL)
 
 ## Requirements
 
-Install the Pillow library before running the project:
+Install Pillow before running the program:
 
 ```bash
 pip install pillow
 ```
 
----
-
 ## How to Run
-
-Save the code as:
-
-```text
-image_encryption.py
-```
-
-Run the program using:
 
 ```bash
 python image_encryption.py
 ```
 
-or
+## Example
 
-```bash
-py image_encryption.py
-```
+### Input
 
----
+Select Image: nissan_gtr.jpg
 
-## Project Workflow
+Enter Key: 26
 
-1. Launch the application.
-2. Click **Browse Image**.
-3. Select an image file.
-4. Enter a numeric key.
-5. Click **Encrypt Image**.
-6. Save the encrypted image.
-7. Open the encrypted image.
-8. Enter the same key.
-9. Click **Decrypt Image**.
-10. Save the restored image.
+Click: Encrypt Image
 
----
+### Output
 
-## Sample Output
+Encrypted image is generated and saved.
 
-### Original Image
+### Decryption
 
-- User selects an image using the Browse button.
-- The selected image is displayed in the preview area.
+Select Encrypted Image
 
-### Encrypted Image
+Enter Key: 26
 
-- Image pixels are modified using the key.
-- The encrypted image is saved and previewed.
+Click: Decrypt Image
 
-### Decrypted Image
+### Result
 
-- The original image is restored using the same key.
-- The decrypted image is displayed in the preview area.
-
----
+Original image is successfully restored.
 
 ## Learning Outcomes
 
-- Image Processing Basics
-- Pixel Manipulation Techniques
-- Encryption and Decryption Concepts
-- GUI Development using Tkinter
-- Working with Images using Pillow
-
----
+* Image Processing Basics
+* Pixel Manipulation Techniques
+* Encryption and Decryption Concepts
+* GUI Development using Tkinter
+* Working with Images using Pillow
 
 ## Internship Details
 
-**Company:** Prodigy InfoTech
+**Organization:** Prodigy InfoTech
 
 **Domain:** Cyber Security
 
 **Task:** Task 02 – Pixel Manipulation for Image Encryption
-
----
