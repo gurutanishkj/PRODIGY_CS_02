@@ -5,22 +5,17 @@
 ### Prodigy InfoTech Cyber Security Internship – Task 02
 
 ## Description
-
 This project is a simple Image Encryption and Decryption Tool developed using Python. The application uses pixel manipulation techniques to encrypt and decrypt images by modifying RGB pixel values using a user-defined key.
 
 A graphical user interface (GUI) built with Tkinter allows users to select images, enter an encryption key, and perform encryption or decryption operations easily.
 
 ## Features
-
 * Encrypts images using a numeric key.
 * Decrypts encrypted images using the same key.
 * Supports PNG, JPG, JPEG, and BMP image formats.
 * Displays image previews within the application.
-* User-friendly graphical interface.
-* Preserves image dimensions during processing.
 
 ## How It Works
-
 * The user selects an image using the Browse Image button.
 * A numeric key is entered for encryption or decryption.
 * During encryption, the key value is added to each RGB pixel component.
